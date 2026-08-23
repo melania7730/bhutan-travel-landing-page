@@ -1,7 +1,3 @@
-/* =========================================
-   GLOBAL
-========================================= */
-
 * {
   box-sizing: border-box;
 }
@@ -14,7 +10,6 @@ body {
   font-family: "Poppins", sans-serif;
   margin: 0;
 
-  /* Soft Bhutan-inspired gradient */
   background: linear-gradient(135deg, #e7efeb 0%, #f4eee5 48%, #e8efeb 100%);
 
   color: #4f5753;
@@ -43,10 +38,6 @@ body {
   width: 100%;
   display: block;
 }
-
-/* =========================================
-   HERO
-========================================= */
 
 .hero {
   background-image:
@@ -129,10 +120,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* =========================================
-   MAIN
-========================================= */
-
 main {
   background: transparent;
 }
@@ -169,10 +156,6 @@ main p {
   line-height: 1.7;
 }
 
-/* =========================================
-   WHY BHUTAN
-========================================= */
-
 .why-bhutan {
   max-width: none;
 
@@ -187,17 +170,6 @@ main p {
   width: 100%;
   display: block;
 }
-
-/* =========================================
-   EXPLORE BHUTAN
-========================================= */
-
-/*
-   IMPORTANT:
-   This section is FULL WIDTH.
-   The previous version had max-width: 1200px,
-   which created the ugly boxed background.
-*/
 
 .destinations {
   max-width: none;
@@ -236,10 +208,6 @@ main p {
   gap: 32px;
 }
 
-/* =========================================
-   DESTINATION CARDS
-========================================= */
-
 .destination-card {
   background: #ffffff;
 
@@ -257,8 +225,6 @@ main p {
 
   box-shadow: 0 18px 42px rgba(23, 63, 53, 0.14);
 }
-
-/* IMAGE + MAP */
 
 .destination-media {
   display: grid;
@@ -286,8 +252,6 @@ main p {
   display: block;
 }
 
-/* CARD CONTENT */
-
 .destination-content {
   padding: 32px;
 }
@@ -312,10 +276,6 @@ main p {
 .destination-content p {
   margin: 0 0 24px;
 }
-
-/* =========================================
-   GOOGLE MAPS BUTTON
-========================================= */
 
 .map-link {
   display: inline-block;
@@ -343,17 +303,6 @@ main p {
 
   transform: translateY(-1px);
 }
-
-/* =========================================
-   VIDEOS
-========================================= */
-
-/*
-   NOT SAGE.
-   This is deliberately neutral/warm so it
-   separates from both the cream Explore section
-   and the green/blue body gradient.
-*/
 
 .videos {
   max-width: none;
@@ -393,11 +342,6 @@ main p {
   gap: 32px;
 }
 
-/*
-   The iframe itself is the YouTube player.
-   Keep the cards simple and architectural.
-*/
-
 .video {
   background: #ffffff;
 
@@ -415,10 +359,6 @@ main p {
 
   display: block;
 }
-
-/* =========================================
-   FOOTER
-========================================= */
 
 footer {
   color: white;
@@ -471,13 +411,7 @@ footer a:hover {
   opacity: 1;
 }
 
-/* =========================================
-   RESPONSIVE — TABLET
-========================================= */
-
 @media (max-width: 960px) {
-  /* HERO */
-
   .container {
     padding-top: 20px;
   }
@@ -502,20 +436,14 @@ footer a:hover {
     font-size: 14px;
   }
 
-  /* GLOBAL GRID */
-
   .grid {
     grid-template-columns: 1fr;
     gap: 32px;
   }
 
-  /* WHY */
-
   .why-bhutan {
     padding: 70px 30px;
   }
-
-  /* EXPLORE */
 
   .destinations {
     padding: 70px 30px;
@@ -524,8 +452,6 @@ footer a:hover {
   .destination-grid {
     grid-template-columns: 1fr;
   }
-
-  /* DESTINATION MEDIA */
 
   .destination-media {
     grid-template-columns: 1fr;
@@ -539,8 +465,6 @@ footer a:hover {
     height: 260px;
   }
 
-  /* VIDEOS */
-
   .videos {
     padding: 70px 30px 80px;
   }
@@ -549,16 +473,10 @@ footer a:hover {
     grid-template-columns: 1fr;
   }
 
-  /* FOOTER */
-
   footer {
     padding: 60px 30px;
   }
 }
-
-/* =========================================
-   RESPONSIVE — MOBILE
-========================================= */
 
 @media (max-width: 600px) {
   .container {
