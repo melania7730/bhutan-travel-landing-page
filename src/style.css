@@ -1,12 +1,29 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
-  background: #172c26;
+
+  /* Soft Bhutan-inspired gradient */
+  background: linear-gradient(135deg, #e7efeb 0%, #f4eee5 48%, #e8efeb 100%);
+
+  color: #4f5753;
 }
 
 .container {
   max-width: 1400px;
   margin: 0 auto;
+  padding-top: 28px;
 }
 
 .grid {
@@ -23,101 +40,180 @@ body {
 }
 
 .img-responsive {
-  max-width: 100%;
+  width: 100%;
   display: block;
 }
 
-/* HERO */
+/* =========================================
+   HERO
+========================================= */
 
 .hero {
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+    linear-gradient(rgba(16, 35, 30, 0.2), rgba(16, 35, 30, 0.2)),
     url("../images/bhutan-hero.jpg");
 
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center center;
 
   color: white;
   text-align: center;
 
-  padding: 120px 40px;
+  min-height: 700px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 60px 40px;
+
+  box-sizing: border-box;
 }
 
 .hero h3 {
-  font-size: 24px;
+  font-size: 20px;
+  line-height: 1.5;
   letter-spacing: 5px;
-  margin: 0;
+  margin: 0 0 24px;
+  font-weight: 800;
 }
 
 .hero h1 {
-  font-size: 64px;
-  line-height: 1;
-  margin: 30px 0;
+  font-size: 84px;
+  line-height: 1.05;
+  max-width: 1100px;
+  margin: 0 auto 30px;
+  font-weight: 700;
+
+  text-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.35),
+    0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
 .hero h2 {
   font-size: 32px;
+  line-height: 1.5;
   font-weight: 400;
   margin: 0;
+
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 .hero a {
   display: inline-block;
+
   background: white;
-  color: #172c26;
+  color: #173f35;
+
   padding: 16px 32px;
-  margin-top: 32px;
+  margin-top: 36px;
 
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 3px;
+
   text-transform: uppercase;
   text-decoration: none;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
-/* MAIN GRID */
+.hero a:hover {
+  background: #b45f43;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   MAIN
+========================================= */
 
 main {
-  background: white;
+  background: transparent;
 }
 
 main section {
-  max-width: 1200px;
   margin: 0 auto;
   padding: 100px 0;
 }
 
 main h3 {
-  color: #8b8b8b;
+  color: #b45f43;
+
   font-size: 16px;
   letter-spacing: 5px;
+
   margin: 0;
+
   text-transform: uppercase;
 }
 
 main h2 {
-  color: #172c26;
+  color: #173f35;
+
   font-size: 40px;
   line-height: 1.3;
+
   margin: 0 0 30px;
 }
 
 main p {
   color: #4f5753;
+
   font-size: 16px;
   line-height: 1.7;
 }
 
-/* DESTINATIONS */
+/* =========================================
+   WHY BHUTAN
+========================================= */
+
+.why-bhutan {
+  max-width: none;
+
+  background: #fffdf9;
+
+  padding: 100px max(30px, calc((100% - 1200px) / 2));
+
+  box-sizing: border-box;
+}
+
+.why-bhutan img {
+  width: 100%;
+  display: block;
+}
+
+/* =========================================
+   EXPLORE BHUTAN
+========================================= */
+
+/*
+   IMPORTANT:
+   This section is FULL WIDTH.
+   The previous version had max-width: 1200px,
+   which created the ugly boxed background.
+*/
 
 .destinations {
-  max-width: 1200px;
+  max-width: none;
+
+  background: linear-gradient(135deg, #e9e4dc 0%, #e3dfd7 100%);
+
+  padding: 100px max(30px, calc((100% - 1200px) / 2));
+
+  box-sizing: border-box;
 }
 
 .destinations-heading {
+  max-width: 1200px;
+  margin: 0 auto 55px;
+
   text-align: center;
-  margin-bottom: 50px;
 }
 
 .destinations-heading h3 {
@@ -128,41 +224,65 @@ main p {
   margin-bottom: 0;
 }
 
-/* DESTINATION CARD GRID */
-
 .destination-grid {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 32px;
 }
 
-/* DESTINATION CARD */
+/* =========================================
+   DESTINATION CARDS
+========================================= */
 
 .destination-card {
   background: #ffffff;
-  box-shadow: 0 8px 30px rgba(23, 44, 38, 0.12);
+
+  box-shadow: 0 12px 35px rgba(23, 63, 53, 0.1);
+
   overflow: hidden;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 18px 42px rgba(23, 63, 53, 0.14);
 }
 
 /* IMAGE + MAP */
 
 .destination-media {
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   height: 260px;
 }
 
 .destination-media img {
   width: 100%;
   height: 260px;
+
   object-fit: cover;
+
   display: block;
 }
 
 .destination-media iframe {
   width: 100%;
   height: 260px;
+
   border: 0;
+
   display: block;
 }
 
@@ -173,14 +293,19 @@ main p {
 }
 
 .destination-content h3 {
-  color: #8b8b8b;
+  color: #b45f43;
+
   font-size: 14px;
   letter-spacing: 4px;
+
   margin: 0 0 8px;
 }
 
 .destination-content h2 {
+  color: #173f35;
+
   font-size: 28px;
+
   margin: 0 0 18px;
 }
 
@@ -188,36 +313,64 @@ main p {
   margin: 0 0 24px;
 }
 
-/* GOOGLE MAPS LINK */
+/* =========================================
+   GOOGLE MAPS BUTTON
+========================================= */
 
 .map-link {
   display: inline-block;
 
-  background: #172c26;
+  background: #173f35;
   color: white;
 
   padding: 13px 20px;
 
   font-size: 13px;
   font-weight: 700;
+
   letter-spacing: 1.5px;
 
   text-decoration: none;
   text-transform: uppercase;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .map-link:hover {
-  opacity: 0.85;
+  background: #b45f43;
+
+  transform: translateY(-1px);
 }
-/* YOUTUBE VIDEOS */
+
+/* =========================================
+   VIDEOS
+========================================= */
+
+/*
+   NOT SAGE.
+   This is deliberately neutral/warm so it
+   separates from both the cream Explore section
+   and the green/blue body gradient.
+*/
 
 .videos {
-  background: #f8f8f8;
+  max-width: none;
+
+  background: linear-gradient(135deg, #fffdf9 0%, #faf8f3 100%);
+
+  padding: 100px 30px 110px;
+
+  box-sizing: border-box;
 }
 
 .videos-heading {
+  max-width: 1200px;
+
+  margin: 0 auto 50px;
+
   text-align: center;
-  margin-bottom: 50px;
 }
 
 .videos-heading h3 {
@@ -229,50 +382,78 @@ main p {
 }
 
 .video-grid {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 32px;
 }
 
+/*
+   The iframe itself is the YouTube player.
+   Keep the cards simple and architectural.
+*/
+
 .video {
-  background: white;
+  background: #ffffff;
+
+  overflow: hidden;
+
+  box-shadow: 0 10px 28px rgba(23, 63, 53, 0.1);
 }
 
 .video iframe {
   width: 100%;
+
   aspect-ratio: 16 / 9;
+
   border: 0;
+
   display: block;
 }
-/* FOOTER */
+
+/* =========================================
+   FOOTER
+========================================= */
 
 footer {
   color: white;
 
   background-image:
-    linear-gradient(rgba(17, 31, 26, 0.88), rgba(17, 31, 26, 0.88)),
+    linear-gradient(rgba(17, 31, 26, 0.82), rgba(17, 31, 26, 0.82)),
     url("../images/bhutan-footer.jpg");
 
   background-repeat: no-repeat;
+
   background-size: cover;
+
   background-position: center;
 
-  padding: 80px 100px;
+  padding: 80px max(30px, calc((100% - 1200px) / 2));
+
+  box-sizing: border-box;
 }
 
 footer h3 {
   font-size: 20px;
+
   margin-top: 0;
 }
 
 footer p {
   font-size: 16px;
   line-height: 1.5;
+
   opacity: 0.85;
 }
 
 footer ul {
   list-style: none;
+
   padding: 0;
   margin: 0;
 }
@@ -286,10 +467,27 @@ footer a {
   opacity: 0.85;
 }
 
-/* RESPONSIVE */
+footer a:hover {
+  opacity: 1;
+}
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
 @media (max-width: 960px) {
+  /* HERO */
+
+  .container {
+    padding-top: 20px;
+  }
+
   .hero {
-    padding: 80px 30px;
+    min-height: 600px;
+
+    padding: 100px 30px;
+
+    background-position: center center;
   }
 
   .hero h1 {
@@ -300,18 +498,34 @@ footer a {
     font-size: 24px;
   }
 
-  main section {
-    padding: 60px 30px;
+  .hero h3 {
+    font-size: 14px;
   }
+
+  /* GLOBAL GRID */
 
   .grid {
     grid-template-columns: 1fr;
     gap: 32px;
   }
 
+  /* WHY */
+
+  .why-bhutan {
+    padding: 70px 30px;
+  }
+
+  /* EXPLORE */
+
+  .destinations {
+    padding: 70px 30px;
+  }
+
   .destination-grid {
     grid-template-columns: 1fr;
   }
+
+  /* DESTINATION MEDIA */
 
   .destination-media {
     grid-template-columns: 1fr;
@@ -324,10 +538,83 @@ footer a {
   .destination-media iframe {
     height: 260px;
   }
+
+  /* VIDEOS */
+
+  .videos {
+    padding: 70px 30px 80px;
+  }
+
   .video-grid {
     grid-template-columns: 1fr;
   }
+
+  /* FOOTER */
+
   footer {
     padding: 60px 30px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .container {
+    padding-top: 12px;
+  }
+
+  .hero {
+    min-height: 560px;
+
+    padding: 80px 20px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+    line-height: 1.08;
+  }
+
+  .hero h2 {
+    font-size: 20px;
+  }
+
+  .hero h3 {
+    font-size: 12px;
+    letter-spacing: 4px;
+  }
+
+  .hero a {
+    padding: 14px 26px;
+    font-size: 12px;
+  }
+
+  main h2 {
+    font-size: 32px;
+  }
+
+  .why-bhutan {
+    padding: 60px 20px;
+  }
+
+  .destinations {
+    padding: 60px 20px;
+  }
+
+  .videos {
+    padding: 60px 20px 70px;
+  }
+
+  .destination-content {
+    padding: 26px;
+  }
+
+  .destination-content h2 {
+    font-size: 25px;
+  }
+
+  footer {
+    padding: 50px 20px;
   }
 }
